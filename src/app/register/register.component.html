@@ -1,0 +1,32 @@
+<div class="layout_padding contact_section">
+    <div class="container">
+      <div class="contact_section_inner">
+        <div class="contact_main">
+          <h1 class="contact_text">Register</h1>
+          <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="input_main">
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Name" formControlName="name">
+              </div>
+              <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Email" formControlName="email">
+              </div>
+              <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Password" formControlName="password">
+              </div>
+              <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Confirm Password" formControlName="password_confirmation">
+              </div>
+            </div>
+            <div class="massage_box">
+              <div class="row">
+                <div class="col-sm-4">
+                  <button class="send_bt">Register</button>
+                </div>
+              </div>
+            </div>
+          </form>                  
+        </div>
+      </div>
+    </div>
+  </div>
