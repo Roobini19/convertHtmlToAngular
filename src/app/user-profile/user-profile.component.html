@@ -3,10 +3,21 @@
         <div class="card inner-main">
           <div class="card-header">
             User Profile
+            <div class="float-right">
+              <a  [routerLink]="['/edit-profile', userProfile?.id]">
+                <button class="btn btn-primary"><i class="fa fa-edit"></i> Edit</button>
+              </a>
+            </div>
           </div>
           <div class="card-body">
             <p class="card-text">Name: <strong>{{userProfile?.name}}</strong></p>
             <p class="card-text">Email: <strong>{{userProfile?.email}}</strong></p>
+            <h2>Addresses</h2>
+            <div *ngFor="let address of userProfile?.addresses">
+              <p class="card-text">Address: <strong>{{address.address}}</strong></p>
+              <p class="card-text">City: <strong>{{address.city}}</strong></p>
+              <p class="card-text">State: <strong>{{address.state}}</strong></p>
+            </div>
           </div>
         </div>
     </div>

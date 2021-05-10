@@ -3,8 +3,13 @@
       <div class="contact_section_inner">
         <div class="contact_main">
           <h1 class="contact_text">Login</h1>
-          <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()" #myform="ngForm">            
             <div class="input_main">
+              <div class="alert alert-danger" role="alert" *ngIf="errors">{{ errors }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
               <div class="form-group">
                   <input type="email" class="form-control" placeholder="Email" formControlName="email">
               </div>

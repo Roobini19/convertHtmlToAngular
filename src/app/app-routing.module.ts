@@ -3,10 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { CompanyComponent } from './company/company.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FurnituresComponent } from './furnitures/furnitures.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RegisterComponent } from './register/register.component';
+import { UserListComponent } from './user-list/user-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
@@ -34,7 +37,16 @@ const routes: Routes = [
   }},
   {path: 'profile', component: UserProfileComponent, data: {
     title: 'Profile',
-  }}
+  }},
+  {path: 'edit-profile/:id', component: EditProfileComponent, data: {
+    title: 'Edit Profile',
+  }},
+  {path: 'user-list', component: UserListComponent, data:{
+    title: 'User List',
+  }},
+  {path: "**", component: PagenotfoundComponent, data: {
+    title: 'Oops!Page Not Found'
+  }},
 ];
 
 @NgModule({

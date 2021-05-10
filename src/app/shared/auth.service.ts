@@ -18,6 +18,16 @@ export class Contact {
   message: string;
 };
 
+export class UserProfile {
+  name: String;
+  email: String;
+  addresses: [{
+    address: String,
+    state: String,
+    city: String
+  }];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -41,5 +51,13 @@ export class AuthService {
   
   userProfile(): Observable<any> {
     return this.http.get(`${baseURL}/user-profile`);
+  }
+
+  updateProfile(id: any,userProfile: UserProfile): Observable<any> {
+    return this.http.post(`${baseURL}/update-profile/${id}`, userProfile);
+  }
+
+  userList(): Observable<any> {
+    return this.http.get(`${baseURL}/user-list`);
   }
 }

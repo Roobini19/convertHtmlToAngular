@@ -14,15 +14,17 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                            <li class="nav-item active">
-                            <a class="nav-link active" href="/">Home<span class="sr-only">(current)</span></a> </li>
+                            <a class="nav-link active" [routerLink]="'/'">Home<span class="sr-only">(current)</span></a> </li>
                            <li class="nav-item">
-                            <a class="nav-link" href="/about">About</a></li>
+                            <a class="nav-link" [routerLink]="'/about'">About</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="'/user-list'">UserList</a></li>
                            <li class="nav-item">
-                            <a class="nav-link" href="/company">Company</a></li>
+                            <a class="nav-link" [routerLink]="'/company'">Company</a></li>
                            <li class="#" href="#">
-                              <a class="nav-link" href="/furnitures">Furnitures</a></li>
+                              <a class="nav-link" [routerLink]="'/furnitures'">Furnitures</a></li>
                            <li class="nav-item" href="#">
-                              <a class="nav-link" href="contactus">Contact Us</a></li>
+                              <a class="nav-link" [routerLink]="'/contactus'">Contact Us</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -32,9 +34,9 @@
                 <div class="togle_3">
               <div class="left_main">
                  <div class="menu_main">
-                    <a href="/login" *ngIf="!isSignedIn"><i class="fa fa-fw fa-user"></i> Login</a>
-                    <a href="/register" *ngIf="!isSignedIn"> / Register </a>
-                    <a href="/profile" *ngIf="isSignedIn"> User Profile </a>
+                    <a [routerLink]="'login'" *ngIf="!isSignedIn"><i class="fa fa-fw fa-user"></i> Login</a>
+                    <a [routerLink]="'register'" *ngIf="!isSignedIn"> / Register </a>
+                    <a [routerLink]="'profile'" *ngIf="isSignedIn"> User Profile </a>
                     <button class="btn btn-outline-primary" (click)="signOut()" *ngIf="isSignedIn">Log out</button>
                  </div>
               </div>

@@ -18,7 +18,7 @@ export class AppComponent {
     public router: Router,
     public token: TokenService,
     private titleService: Title,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {

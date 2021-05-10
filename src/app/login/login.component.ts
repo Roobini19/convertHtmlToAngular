@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AutoStateService } from 'src/app/shared/auto-state.service';
 import { AuthService } from 'src/app/shared/auth.service';
 import { TokenService } from 'src/app/shared/token.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -45,10 +46,12 @@ export class LoginComponent implements OnInit {
         console.log(result);
         this.responseHandler(result);
       },
-      error => {
-        console.log("error");
-        console.log(error);
-        this.errors = error.error;
+      error => {        
+        if( error instanceof HttpErrorResponse ) {
+          console.log("error");
+          this.errors = error.error.error
+          console.log(this.errors);
+        }
       },
       () => {
         this.authState.setAuthState(true)

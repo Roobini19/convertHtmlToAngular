@@ -3,20 +3,31 @@
       <div class="contact_section_inner">
         <div class="contact_main">
           <h1 class="contact_text">Register</h1>
-          <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onSubmit()" #myform="ngForm">
+            <div class="row" *ngIf="successMsg">
+              <div class="col-xs-12">
+                <p class="alert alert-success"> <strong>Registration Success!</strong> Please click here to <a [routerLink]="login">Login</a> </p>
+              </div>
+            </div>
             <div class="input_main">
               <div class="form-group">
                   <input type="text" class="form-control" placeholder="Name" formControlName="name">
               </div>
+              <p *ngIf="registerForm.get('name').hasError('required') && myform.submitted" [ngClass]="errorMsg">Name is required*</p>
               <div class="form-group">
                   <input type="email" class="form-control" placeholder="Email" formControlName="email">
               </div>
+              <p *ngIf="registerForm.get('email').hasError('required') && myform.submitted" [ngClass]="errorMsg">Email is required*</p>
+              <div *ngIf="myform.submitted && registerForm.get('email').hasError('email')" [ngClass]="errorMsg">Email must be a valid email address</div>
               <div class="form-group">
                   <input type="password" class="form-control" placeholder="Password" formControlName="password">
               </div>
+              <p *ngIf="registerForm.get('password').hasError('required') && myform.submitted" [ngClass]="errorMsg">Password is required*</p>
               <div class="form-group">
                   <input type="password" class="form-control" placeholder="Confirm Password" formControlName="password_confirmation">
               </div>
+              <p *ngIf="registerForm.get('password_confirmation').hasError('required') && myform.submitted" [ngClass]="errorMsg">Confirm Password is required*</p>
+              <div *ngIf="registerForm.get('password_confirmation').hasError('mustMatch') && myform.submitted" [ngClass]="errorMsg">Passwords must match</div>
             </div>
             <div class="massage_box">
               <div class="row">
@@ -25,7 +36,7 @@
                 </div>
               </div>
             </div>
-          </form>                  
+          </form>  
         </div>
       </div>
     </div>

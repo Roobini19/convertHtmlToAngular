@@ -1,0 +1,29 @@
+<div class="layout_padding contact_section">
+    <div class="container">
+        <h1 class="contact_text">List View</h1>
+        <input type=text class="pull-right searchTerm" placeholder="Filter" [ngStyle]="{'margin': '15px'}" [(ngModel)]="term">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Address</th>
+              <th scope="col">City</th>
+              <th scope="col">State</th>
+            </tr>
+          </thead>
+          <tbody *ngFor = "let userList of userLists | filter:term">
+            <tr>
+              <th scope="row">{{i+1}}</th>
+              <td>{{userList.name}}</td>
+              <td>{{userList.email}}</td>
+              <td>{{userList.profile.address}}</td>
+              <td>{{userList.profile.city}}</td>
+              <td>{{userList.profile.state}}</td>
+            </tr>            
+          </tbody>
+        </table>
+    </div>
+</div>
+        

@@ -14,6 +14,11 @@ import { AuthInterceptor } from './shared/auth.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { RouterModule } from '@angular/router';
+import { UserListComponent } from './user-list/user-list.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -25,14 +30,19 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     ContactusComponent,
     LoginComponent,
     RegisterComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    EditProfileComponent,
+    UserListComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    Ng2SearchPipeModule
   ],
   providers: [
     {

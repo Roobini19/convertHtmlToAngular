@@ -4,6 +4,12 @@ import { AuthService } from 'src/app/shared/auth.service';
 export class User {
   name: String | undefined;
   email: String | undefined;
+  id: Number | undefined;
+  addresses: [{
+    address: String;
+    city: String;
+    state: String;
+  }];
 }
 
 @Component({
@@ -19,6 +25,9 @@ export class UserProfileComponent implements OnInit {
   constructor(public authService: AuthService) {
     this.authService.userProfile().subscribe((data:any) => {
       this.userProfile = data;
+      this.userProfile.addresses = data.profile;
+      console.log(data);
+      console.log(data.profile);
     })
    }
 
