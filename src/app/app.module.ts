@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
 import { UserListComponent } from './user-list/user-list.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UserListCardComponent } from './user-list-card/user-list-card.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     UserProfileComponent,
     EditProfileComponent,
     UserListComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    UserListCardComponent
   ],
   imports: [
     BrowserModule,

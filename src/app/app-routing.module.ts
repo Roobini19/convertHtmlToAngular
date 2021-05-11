@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RegisterComponent } from './register/register.component';
+import { UserListCardComponent } from './user-list-card/user-list-card.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
@@ -43,6 +44,9 @@ const routes: Routes = [
   }},
   {path: 'user-list', component: UserListComponent, data:{
     title: 'User List',
+  }},
+  {path: 'user-list-card', component: UserListCardComponent, data:{
+    title: 'User List Card View',
   }},
   {path: "**", component: PagenotfoundComponent, data: {
     title: 'Oops!Page Not Found'

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AuthService } from '../shared/auth.service';
 
 interface UserProfile {

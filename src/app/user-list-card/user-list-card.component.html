@@ -1,0 +1,23 @@
+<div class="layout_padding contact_section">
+    <div class="container">
+        <h1 class="contact_text">Card View</h1>
+        <input type=text class="pull-right searchTerm" placeholder="Filter" [(ngModel)]="term">
+        <div class="row">
+            <div class="col-sm-6" *ngFor="let userlist of userlists">
+                <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title"><strong>{{ userlist.name }}</strong></h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{{ userlist.email }}</h6>
+                      <p class="card-text"> {{userlist.profile.address}} </p>
+                      <p class="card-text"> {{userlist.profile.city}} </p>
+                      <p class="card-text"> {{userlist.profile.state}} </p>
+                    </div>
+                  </div>
+                  <div *ngIf="!userlists.length">
+                      No Records Found
+                  </div>
+            </div>     
+        </div>           
+    </div>
+</div>
+        
